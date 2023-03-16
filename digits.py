@@ -27,4 +27,3 @@ plt.scatter(
 plt.legend(scatterpoints=1)
 plt.grid()
 plt.show()
-    
