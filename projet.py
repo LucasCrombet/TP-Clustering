@@ -92,6 +92,7 @@ kmeans = KMeans(n_clusters=3)
 
 #Q14
 classe = KMeans.fit_predict(X = donnees_APC,self=kmeans)
+print(f'classe: {classe}')
 
 #Q15
 labels_unique = np.unique(classe)
@@ -102,22 +103,12 @@ labels_unique = np.unique(classe)
 # Ecrire une boucle sur les différentes valeurs de labels_unique, qui permettra d’afficher les nuages
 # des points dans df correspondants à tous les labels
 
+for label_num in labels_unique:
+    print(type(label_num))
+    print(label_num)
 
-
-import matplotlib.pyplot as plt
-# Obtenez toutes les valeurs uniques de labels dans df
-labels_unique = df['labels'].unique()
-# Boucle sur chaque valeur unique de labels
-for label in labels_unique:
-    # Sélectionnez les points de données correspondant à la valeur de label actuelle
-    data = df[df['labels'] == label] 
-    # Tracez le nuage de points pour les données actuelles
-    plt.scatter(data['x'], data['y'], label=label)
-# Ajoutez une légende pour les différents labels
-plt.legend()
-# Affichez le graphique final
-plt.show()
-
+print(type(labels_unique))
+print(labels_unique)
 
 #Q17
 #plt.show()
