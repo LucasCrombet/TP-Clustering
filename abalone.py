@@ -10,7 +10,10 @@ import pandas as pd
 column_names = ["Sex","Length","Diameter","Height","Whole weight","Shucked weight","Viscera weight","Shell weight","Rings"]
 abalone = pd.read_csv("abalone.data",names=column_names)
 
-data = abalone[["Length","Diameter","Height","Whole weight","Shucked weight","Viscera weight","Shell weight"]]
+clean_up = {"Sex":{"I":0,"M":1,"F":2}}
+abalone = abalone.replace(clean_up)
+
+data = abalone[["Sex","Length","Diameter","Height","Whole weight","Shucked weight","Viscera weight","Shell weight"]]
 y = abalone[["Rings"]]
 
 # Elbow Method pour les K means# Importation de ElbowVisualizer
