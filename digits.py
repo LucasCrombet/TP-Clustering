@@ -8,6 +8,7 @@ from sklearn.datasets import load_digits
 
 digits = load_digits()
 x = digits.data
+y = digits.target
 
 # Elbow Method for K means# Import ElbowVisualizer
 from yellowbrick.cluster import KElbowVisualizer
@@ -17,13 +18,6 @@ visualizer = KElbowVisualizer(model, k=(2,30), timings= True)
 visualizer.fit(x)        # Fit data to visualizer
 visualizer.show()        # Finalize and render figure
 
-kmeans = KMeans(n_clusters=9)
-classe = kmeans.fit_predict(X = x)
-
-plt.scatter(
-    x[classe == 0, 0], x[classe == 0, 1],s=50, c='lightgreen',marker='s', edgecolor='black',label='cluster 1')
-
-
-plt.legend(scatterpoints=1)
-plt.grid()
+plt.figure(1, figsize=(3, 3))
+plt.imshow(digits.images[-1], cmap=plt.cm.gray_r, interpolation="nearest")
 plt.show()
