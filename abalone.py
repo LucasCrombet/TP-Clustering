@@ -23,5 +23,5 @@ model = KMeans()
 visualizer = KElbowVisualizer(model, k=(2,30), timings= True)
 visualizer.fit(data)       
 visualizer.show()        
-# D'après la Elbow Method, le nombre k de de clusters optimal est 6
-k = 6
+# D'après la Elbow Method, le nombre k de de clusters optimal est 8
+k = 8
