@@ -21,7 +21,7 @@ visualizer.fit(digits.data)
 visualizer.show()        
 
 # D'après la Elbow Method, le nombre k de de clusters optimal est 9
-k = 19
+k = 9
 
 # Score
 def bench_k_means(estimator, name, data):
