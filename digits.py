@@ -20,7 +20,8 @@ visualizer.show()        # Finalize and render figure
 kmeans = KMeans(n_clusters=9)
 classe = kmeans.fit_predict(X = x)
 
-plt.scatter(x[:,0],x[:,1])
+plt.scatter(
+    x[classe == 0, 0], x[classe == 0, 1],s=50, c='lightgreen',marker='s', edgecolor='black',label='cluster 1')
 
 
 plt.legend(scatterpoints=1)
